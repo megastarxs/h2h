@@ -1,5 +1,5 @@
 var express = require('express');
-var app = express()
+var app = express.createServer();
 var io = require('socket.io').listen(app);
 var port = 3001;
 var db = require('mongo-lite').connect('mongodb://localhost/test',["l_v"]);

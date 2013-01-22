@@ -132,6 +132,16 @@ hr{margin: 0px;}
      left: -14%;
 }
 
+.lstar {
+    display: none;
+    position: absolute;
+    right: 42%;
+}
 
+.ldrop {
+    position: absolute;
+    right: 78px;
+    top: 93px;
+}
 /*.nav-collapse.collapse{margin-left: 85px;}
 .brand{margin-top: -10px}*/

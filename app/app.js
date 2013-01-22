@@ -106,6 +106,15 @@ io.sockets.on('connection', function(socket) {
 		io.sockets. in (socket.room).emit('updatechat', socket.type, sanitizer.sanitize(data));
 	});
 
+
+    socket.on('good_l', function() {
+        io.sockets. in (socket.room).emit('good_l', socket.type);
+    });
+
+    socket.on('bad_l', function() {
+        io.sockets. in (socket.room).emit('bad_l', socket.type);
+    });
+
 	socket.on('starttyping', function() {
 		socket.broadcast.to(socket.room).emit('starttypin', socket.type);
 	});

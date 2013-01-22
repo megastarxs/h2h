@@ -86,7 +86,10 @@
         <div class="chat hide" id="chat_box">
           <div>
       <div class="vent sprite" id="Venter_s"></div>
-      <div class="listen sprite" id="Listener_s"></div>
+      <div class="listen sprite" id="Listener_s">
+        <img src="assets/star.png" class="lstar hide">
+        <img src="assets/drop.png" class="ldrop hide">
+      </div>
 
       <div class="hero-unit" id="conversation"></div>
       </div>
@@ -95,9 +98,9 @@
         Venter is typing.
       </div>
       <div id="opts" class="hide">
-  <i class="icon-volume-up" alt='icon-volume-off' id="sound"></i>
-  <i class="icon-eye-open" alt='icon-eye-close' id="dudes"></i>
-  </div>
+        <img src="assets/star.png" id="good_l" title="Thank The Listener">
+        <img src="assets/drop.png" id="bad_l" title="Boo The Listener">
+      </div>
       <div class="fr vh" id="Listener_t">
         Listener is typing.
       </div>
@@ -117,6 +120,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
 <script src="assets/socket.io.js"></script>
 <script src="assets/master.js"></script>

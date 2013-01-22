@@ -235,6 +235,11 @@ $("#add_venter,#add_listner").click(function() {
   $(this).siblings().fadeOut();
 });
 
+function add_info(msg)
+{$('<div class="popover"><div class="popover-content"  title="'+getTime()+'""><p>'+msg+'</p></div></div>').appendTo('#conversation');}
+
+
+
 function process_sock(a) {
 
 
@@ -272,9 +277,28 @@ function process_sock(a) {
     $('#' + id + '_t').addClass('vh');
   });
 
+socket.on('good_l', function(id) {
+    $("#Listener_s").effect("bounce", { times:3 }, 1000,function(){
+    $(".lstar").fadeIn();
+    });
+var msg='The Venter has rated you as a good listener.Thanks for spreading the Joy..';
+add_info(msg);
+
+  });
+
+socket.on('bad_l', function(id) {
+$(".ldrop").hide();
+$("#Listener_s").effect("shake", { times:3 }, 1000,function(){
+$(".ldrop").fadeIn();
+});
+var msg='The Venter has rated you as a bad listner.Refer<a href="http://www.compassionpit.us/forum/good-listening/">good listening</a> to help you venter better.';
+add_info(msg);
+  });
+
+
   socket.on('SERVER', function(msg) {
     $("#alert_placeholder").html('<div class="alert alert-info"><a class="close" data-dismiss="alert">×</a><p>'+msg+'</p></div>');
-    $('<div class="popover"><div class="popover-content"  title="'+getTime()+'""><p>'+msg+'</p></div></div>').appendTo('#conversation');
+    add_info(msg);
     cpNotification('SERVER', msg);
   });
 
@@ -286,15 +310,22 @@ function process_sock(a) {
   });
 
 socket.on('disc', function(id) {
-    $('#' + id + '_s,#' + id + '_t').addClass('vh');
+    $('#' + id + '_s,#' + id + '_t,#opts,#data').addClass('vh');
     $('<div class="popover"><div class="popover-content"><p><a href="http://www.heartohelp.us/forum/missed-connections/" target="_blank">Post a Missed Connection</a>.<br></p></div></div>').appendTo('#conversation');
-
+    socket.disconnect();
   });
 
 socket.on('whoami', function(id) {
       $('#'+id+'_t').html('<span class="label label-'+(id == "Venter" ? "success" : "warning")+'">ME</span>').removeClass('vh').attr('id','me');
+      if (id == "Venter")
+      $("#opts").removeClass('hide');
   });
 
+
+$("#opts img").click(function(){
+  socket.emit(this.id);
+  $("#opts").hide();
+});
 
   $('#data').keydown(function(e) {
 

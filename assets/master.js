@@ -241,6 +241,7 @@ function process_sock(a) {
   });
 
   socket.on('SERVER', function(msg) {
+    $("#alert_placeholder").html('<div class="alert alert-info"><a class="close" data-dismiss="alert">×</a><p>'+msg+'</p></div>');
     $('<div class="popover"><div class="popover-content"><p>'+msg+'</p></div></div>').appendTo('#conversation');
     cpNotification('SERVER', msg);
   });

@@ -1,0 +1,6 @@
+1. Install NodeJS and npm and mongo db.
+2. Cd app and Execute 'npm install -d' to create the node_modules folder from package.json
+3. Create a collection l_v in mongo db.
+4. Run program 'nohup node app.js'
+5. run 'ps -ef | grep -v grep | grep node' to find process id and 'kill -9 pid' to kill the app running via nohup
+Feel free to ask any questions.

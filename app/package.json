@@ -1,0 +1,18 @@
+{
+     "name": "h2h",
+     "description": "l v chat system",
+     "autho": "Sethu S<xbsdeset@gmail.com>",
+     "version": "0.0.57",
+      "dependencies": {
+      "express": "2.5.8",
+       "jade": ">= 0.0.1",
+       "socket.io" : "0.8.5",
+       "mongo-lite":"0.3.1"
+    }
+  , "engines": {
+      "node": "0.6.13",
+      "npm": "1.1.41"
+  }
+}
+
+

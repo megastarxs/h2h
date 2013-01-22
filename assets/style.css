@@ -1,0 +1,137 @@
+  body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      .hero-unit{
+        overflow-y:scroll !important;
+        padding: 10px  !important;
+        margin-bottom: 0px  !important;
+        font-size: 14px  !important;
+        height: 400px  !important;
+      }
+
+.typing,textarea{width: 99%}
+
+.fl{float: left;}
+.fr{float: right;}
+
+.vh{visibility: hidden;}
+
+
+.sprite.listen{
+width: 200px; height: 200px;
+background: url(listener.png) no-repeat top left;
+}
+.sprite.vent{
+ background: url(venter.png) no-repeat top left;
+width: 200px; height: 200px;
+}
+.sprite.LOGO{
+    position: absolute;
+}
+
+/*.sprites { background-image: url(sprites.png); background-color: transparent; background-repeat: no-repeat; }
+.listener { width: 200px; height: 200px; background-position: 0 0; }
+.logo2 { width: 100px; height: 80px; background-position: 0 -201px; }
+.venter { width: 200px; height: 200px; background-position: 0 -282px; }
+*/
+.buttons .sprite{display: inline-block;}
+
+.buttons {
+    position: relative;
+    width: 536px;
+    margin: 0 auto;
+}
+
+
+.sprite .btn {
+    bottom: 0;
+    position: absolute;
+}
+.sprite.vent .btn {
+    left: 70px;
+}
+.sprite.listen .btn {
+    right: 200px;
+}
+
+#buttons button {
+    bottom: -16px;
+}
+
+ .popover {
+    display: block !important;
+    width: 55%  !important;
+    position: relative !important;
+    margin: 5px auto !important;
+    top: 50% auto !important;
+
+}
+
+.popover.left {
+    left: 4%;
+    background-color: #FAF6ED;
+}
+
+.popover.right {
+    left: -4%;
+    background-color: #EDFAF3;
+}
+
+.popover p {
+    margin: 0 !important;
+    word-wrap:break-word;
+}
+
+.popover-content {
+    padding: 1px !important;
+}
+
+hr{margin: 0px;}
+
+.hero-unit {
+    background-color: #FFFFFF !important;
+    }
+
+
+.chat .sprite {
+    position: absolute;
+    bottom: 0px;
+}
+.chat > div {
+    position: relative;
+}
+.chat .vent {
+    left: 0px;
+}
+.chat .listen {
+    right: 12px;
+}
+
+
+.typing .label-warning{margin-right: 33px;}
+.typing .label-success{margin-left: 33px;}
+
+
+
+#opts {
+    left: 50%;
+    position: absolute;
+}
+
+.no-dude #Venter_s, .no-dude #Listener_s {
+    display: none;
+}
+
+.no-dude .popover {
+    width: 70% !important;
+}
+.no-dude .popover.left {
+     left: 14%;
+}
+.no-dude .popover.right {
+     left: -14%;
+}
+
+
+/*.nav-collapse.collapse{margin-left: 85px;}
+.brand{margin-top: -10px}*/

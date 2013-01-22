@@ -236,7 +236,10 @@ $("#add_venter,#add_listner").click(function() {
 });
 
 function add_info(msg)
-{$('<div class="popover"><div class="popover-content"  title="'+getTime()+'""><p>'+msg+'</p></div></div>').appendTo('#conversation');}
+{
+  $('<div class="popover"><div class="popover-content"  title="'+getTime()+'""><p>'+msg+'</p></div></div>').appendTo('#conversation');
+$('#conversation').scrollTop($("#conversation")[0].scrollHeight);
+}
 
 
 
@@ -318,7 +321,7 @@ socket.on('disc', function(id) {
 socket.on('whoami', function(id) {
       $('#'+id+'_t').html('<span class="label label-'+(id == "Venter" ? "success" : "warning")+'">ME</span>').removeClass('vh').attr('id','me');
       if (id == "Venter")
-      $("#opts").removeClass('hide');
+      $("#opts").show('hide');
   });
 
 

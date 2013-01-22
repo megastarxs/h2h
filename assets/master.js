@@ -294,7 +294,7 @@ $(".ldrop").hide();
 $("#Listener_s").effect("shake", { times:3 }, 1000,function(){
 $(".ldrop").fadeIn();
 });
-var msg='The Venter has rated you as a bad listner.Refer<a href="http://www.compassionpit.us/forum/good-listening/">good listening</a> to help you venter better.';
+var msg='The Venter has rated you as a bad listner.Refer <a href="http://www.compassionpit.us/forum/good-listening/">good listening</a> to help you venter better.';
 add_info(msg);
   });
 

@@ -176,6 +176,38 @@
 // Author:  Maciej Konieczny <hello@narf.pl>
 (function(f){function l(g,h){function d(a){if(!e){e=true;c.start&&c.start(a,b)}}function i(a,j){if(e){clearTimeout(k);k=setTimeout(function(){e=false;c.stop&&c.stop(a,b)},j>=0?j:c.delay)}}var c=f.extend({start:null,stop:null,delay:400},h),b=f(g),e=false,k;b.keypress(d);b.keydown(function(a){if(a.keyCode===8||a.keyCode===46)d(a)});b.keyup(i);b.blur(function(a){i(a,0)})}f.fn.typing=function(g){return this.each(function(h,d){l(d,g)})}})(jQuery);
 
+
+function getTime(){
+var a_p = "";
+var d = new Date();
+
+var curr_hour = d.getHours();
+
+if (curr_hour < 12)
+   {
+   a_p = "AM";
+   }
+else
+   {
+   a_p = "PM";
+   }
+if (curr_hour == 0)
+   {
+   curr_hour = 12;
+   }
+if (curr_hour > 12)
+   {
+   curr_hour = curr_hour - 12;
+   }
+
+var curr_min = d.getMinutes();
+return curr_hour + ":" + curr_min + " " + a_p;
+}
+
+
+
+
+
 //////Master begins from here
 var socket, $_hasFocus = true,
   last_msgr = '',
@@ -222,7 +254,7 @@ function process_sock(a) {
 
       last_msgr = id;
       var cass = id == "Venter" ? "right" : "left";
-      last_msg = $('<div class="popover ' + cass + '"><div class="arrow"></div><div class="popover-content"><p>' + data + '</p></div></div>').appendTo('#conversation');
+      last_msg = $('<div class="popover ' + cass + '" title="'+getTime()+'""><div class="arrow"></div><div class="popover-content"><p>' + data + '</p></div></div>').appendTo('#conversation');
     }
     else
     $('<hr><p>' + data + '</p>').appendTo(last_msg);
@@ -242,7 +274,7 @@ function process_sock(a) {
 
   socket.on('SERVER', function(msg) {
     $("#alert_placeholder").html('<div class="alert alert-info"><a class="close" data-dismiss="alert">×</a><p>'+msg+'</p></div>');
-    $('<div class="popover"><div class="popover-content"><p>'+msg+'</p></div></div>').appendTo('#conversation');
+    $('<div class="popover"><div class="popover-content"  title="'+getTime()+'""><p>'+msg+'</p></div></div>').appendTo('#conversation');
     cpNotification('SERVER', msg);
   });
 

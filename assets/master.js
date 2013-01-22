@@ -255,11 +255,10 @@ function process_sock(a) {
 
   socket.on('updatechat', function(id, data) {
 
-    if(last_msgr != id) {
-
       if(dbl_msg==data) return 0;
       else dbl_msg=data;
 
+    if(last_msgr != id) {
       last_msgr = id;
       var cass = id == "Venter" ? "right" : "left";
       last_msg = $('<div class="popover ' + cass + '" title="'+getTime()+'""><div class="arrow"></div><div class="popover-content"><p>' + data + '</p></div></div>').appendTo('#conversation');

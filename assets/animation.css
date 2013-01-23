@@ -34,16 +34,17 @@ writing-mode: lr-tb;
     transition: all 1s ease-in-out;
 
 }
-#logo:hover .h2h{width: 226px;
+
+#logo:hover .h2h,#logo.ani .h2h{width: 226px;
 -webkit-transform: rotate(-2deg);
 -moz-transform: rotate(-2deg);
 -o-transform: rotate(-2deg);
 writing-mode: lr-tb;
 }
 
-#logo:hover {left: 40%;}
+#logo:hover,#logo.ani {left: 40%;}
 
-#logo:hover .h1,#logo:hover .h2{ opacity:0;}
+#logo:hover .h1,#logo:hover .h2,#logo.ani .h1,#logo.ani .h2{ opacity:0;}
 
 #logo {
   position: absolute;

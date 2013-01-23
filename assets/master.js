@@ -306,6 +306,11 @@ add_info(msg);
 
 
   socket.on('all_connected', function() {
+    $("#logo").addClass('ani');
+    setTimeout(
+      function(){
+       $("#logo").removeClass('ani');
+      },5000);
 
     window.onbeforeunload = function() { return "Are you sure you want to disconnect this chat!!!"; }
     $("#buttons").fadeOut('slow', function() {

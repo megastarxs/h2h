@@ -211,7 +211,7 @@ return curr_hour + ":" + curr_min + " " + a_p;
 //////Master begins from here
 var socket, $_hasFocus = true,
   last_msgr = '',
-  last_msg;
+  last_msg,connected=false;
 
 // var h2h=location.hostname+":3001";
 var h2h="http://heartohelp.us"+":3001";
@@ -306,19 +306,25 @@ add_info(msg);
 
 
   socket.on('all_connected', function() {
+
+    connected=true;
     $("#logo").addClass('ani');
     setTimeout(
       function(){
        $("#logo").removeClass('ani');
       },5000);
 
-    window.onbeforeunload = function() { return "Are you sure you want to disconnect this chat!!!"; }
+    window.onbeforeunload = function() {
+      if(connected)
+      return "Are you sure you want to disconnect this chat!!!";
+    }
     $("#buttons").fadeOut('slow', function() {
       $("#chat_box").fadeIn();
     });
   });
 
 socket.on('disc', function(id) {
+  connected=false;
     $('#' + id + '_s,#' + id + '_t,#opts,#data').addClass('vh');
     $('<div class="popover"><div class="popover-content"><p><a href="http://www.heartohelp.us/forum/missed-connections/" target="_blank">Post a Missed Connection</a>.<br></p></div></div>').appendTo('#conversation');
     socket.disconnect();

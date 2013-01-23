@@ -306,6 +306,8 @@ add_info(msg);
 
 
   socket.on('all_connected', function() {
+
+    window.onbeforeunload = function() { return "Are you sure you want to disconnect this chat!!!"; }
     $("#buttons").fadeOut('slow', function() {
       $("#chat_box").fadeIn();
     });

@@ -1,0 +1,57 @@
+  .h1,.h2{
+    background-image: url(logo.png);
+    width: 39px;
+    height: 70px;
+  }
+.h2h,.h1,.h2
+{background-repeat:no-repeat;
+float:left;
+margin: 0px auto;
+}
+.h1{background-position: 0% 0%;}
+.h2{background-position: 100% 0%;}
+
+.h1,.h2
+{
+-webkit-transition: opacity 0.5s ease-in;
+-moz-transition: opacity 0.5s ease-in;
+-o-transition: opacity 0.5s ease-in;
+}
+
+.h2h{
+  background-image: url(h2h.png);
+  height: 70px;
+  width: 0px;
+
+-webkit-transform: rotate(180deg);
+-moz-transform: rotate(180deg);
+-o-transform: rotate(180deg);
+writing-mode: lr-tb;
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+}
+#logo:hover .h2h{width: 226px;
+-webkit-transform: rotate(-2deg);
+-moz-transform: rotate(-2deg);
+-o-transform: rotate(-2deg);
+writing-mode: lr-tb;
+}
+
+#logo:hover {left: 40%;}
+
+#logo:hover .h1,#logo:hover .h2{ opacity:0;}
+
+#logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+
+   -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}

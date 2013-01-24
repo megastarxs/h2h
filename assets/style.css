@@ -144,5 +144,9 @@ hr{margin: 0px;}
     right: 78px;
     top: 93px;
 }
+
+.navbar-fixed-top {
+    position: fixed !important;
+}
 /*.nav-collapse.collapse{margin-left: 85px;}
 .brand{margin-top: -10px}*/

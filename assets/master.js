@@ -237,7 +237,7 @@ $("#add_venter,#add_listner").click(function() {
 
 function add_info(msg)
 {
-  $('<div class="popover"><div class="popover-content"  title="'+getTime()+'""><p>'+msg+'</p></div></div>').appendTo('#conversation');
+  $('<div class="popover"><div class="popover-content"  title="'+getTime()+'"><p>'+msg+'</p></div></div>').appendTo('#conversation');
 $('#conversation').scrollTop($("#conversation")[0].scrollHeight);
 }
 
@@ -261,7 +261,7 @@ function process_sock(a) {
     if(last_msgr != id) {
       last_msgr = id;
       var cass = id == "Venter" ? "right" : "left";
-      last_msg = $('<div class="popover ' + cass + '" title="'+getTime()+'""><div class="arrow"></div><div class="popover-content"><p>' + data + '</p></div></div>').appendTo('#conversation');
+      last_msg = $('<div class="popover ' + cass + '" title="'+getTime()+'"><div class="arrow"></div><div class="popover-content"><p>' + data + '</p></div></div>').appendTo('#conversation');
     }
     else
     $('<hr><p>' + data + '</p>').appendTo(last_msg);

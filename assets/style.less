@@ -1,0 +1,253 @@
+@import "elements.less";
+.vh {
+    visibility: hidden;
+}
+// .hero-unit {
+//     overflow-y:scroll !important;
+//     padding: 10px  !important;
+//     margin-bottom: 0px  !important;
+//     font-size: 14px  !important;
+//     height: 400px  !important;
+//     background-color: #FFFFFF !important;
+// }
+.typing,textarea {
+    width: 99%;
+}
+.ldrop {
+    position: absolute;
+    right: 78px;
+    top: 93px;
+}
+
+.navbar-fixed-top {
+    position: fixed !important;
+}
+.sprite.listen {
+    width: 200px;
+    height: 200px;
+    background: url(listener.png) no-repeat top left;
+}
+.fr {
+    float: right;
+}
+#opts {
+    left: 50%;
+    position: absolute;
+}
+.typing {
+    .label-success {
+        margin-left: 33px;
+    }
+    .label-warning {
+        margin-right: 33px;
+    }
+}
+
+.no-dude #Venter_s, .no-dude #Listener_s {
+    display: none;
+}
+#buttons {
+    button {
+        bottom: 10px;
+    }
+}
+.buttons {
+    margin: 0 auto;
+    text-align: center;
+    .sprite {
+        position: relative;
+        display: inline-block;
+            .btn {
+            left: 63px;
+            }
+    }
+}
+
+.sprite.vent {
+    background: url(venter.png) no-repeat top left;
+    width: 200px;
+    height: 200px;
+}
+.chat {
+    .listen {
+        right: 12px;
+    }
+    .vent {
+        left: 0px;
+    }
+
+    &>{
+        div {
+            position: relative;
+        }
+    }
+    .sprite {
+        position: absolute;
+        bottom: 0px;
+    }
+}
+.sprite {
+    z-index: 1;
+    .btn {
+        bottom: 0;
+        position: absolute;
+    }
+}
+.lstar {
+    display: none;
+    position: absolute;
+    right: 42%;
+}
+.fl {
+    float: left;
+}
+hr {
+    margin: 0px;
+}
+.sprite.LOGO {
+    position: absolute;
+}
+
+body > .container{padding-top:60px;}
+
+
+#logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 1031;
+    .animate;
+
+
+
+&:hover,.ani {
+     left: 40%;
+
+     .h1,.h2 {opacity:0;}
+    .h2h {width: 226px;.rotation(-2deg);}
+  }
+
+
+}
+
+.h1 {
+    background-position: 0% 0%;
+}
+
+.h2 {
+    background-position: 100% 0%;
+}
+
+
+
+
+.h1,.h2 {
+    background-image: url(logo.png);
+    width: 39px;
+    height: 70px;
+    .animate(opacity)
+}
+
+.h2h {
+    background-image: url(h2h.png);
+    height: 70px;
+    width: 0px;
+    .rotation(180deg);;
+    .animate;
+}
+.h2h,.h1,.h2 {
+    background-repeat:no-repeat;
+    float:left;
+    margin: 0px auto;
+}
+
+
+
+
+.animate (@ani: all) {
+  -webkit-transition: @ani 1s ease-in-out;
+    -moz-transition: @ani 1s ease-in-out;
+    -o-transition: @ani 1s ease-in-out;
+    transition: @ani 1s ease-in-out;
+}
+
+
+
+
+.bubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+
+
+&::before {
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    .transform(rotate( 29deg ) skew( -35deg ));
+    width:  20px;
+    }
+}
+
+
+.Venter{
+    background-color: #f705c;
+    float: left;
+    margin: 5px 45px 5px 20px;
+    &::before {
+    background-color: #f705c;
+    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    left: -9px;
+    }
+}
+
+
+.Listener{
+    background-color: #4ed7ff;
+    float: right;
+    margin: 5px 20px 5px 45px;
+    &::before {
+        background-color: #4ed7ff;
+        box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
+        right: -9px;
+    }
+}
+
+
+
+.buttons.hero-unit{background:none;
+ .sprite{margin-right: 70px;}
+}
+
+@media only screen and (max-width: 600px) {
+   .buttons.hero-unit{.sprite{margin-right: 15px;}}
+.hero-unit {
+    font-size: 12px;
+    h3{font-size:20px;}
+}
+p{margin:0px;}
+
+}
+
+
+@media only screen and (max-width: 480px) {
+.hero-unit{padding: 4px;}
+.buttons.hero-unit{.sprite{margin-right: 0px;}}
+
+.alert{padding: 8px 15px 8px 14px;}
+}
+
+#conversation.hero-unit{margin-bottom:0px; font-size: 14px;
+
+.media-list li{margin-bottom:2px;}
+}
+#chat_holder{height:80px;}
+
+.btn-navbar
+{margin-right: 15px !important;}

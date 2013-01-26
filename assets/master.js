@@ -260,8 +260,7 @@ function process_sock(a) {
 
     if(last_msgr != id) {
       last_msgr = id;
-      var cass = id == "Venter" ? "right" : "left";
-      last_msg = $('<div class="popover ' + cass + '" title="'+getTime()+'"><div class="arrow"></div><div class="popover-content"><p>' + data + '</p></div></div>').appendTo('#conversation');
+      last_msg = $('<div class="hlt"><div class="bubble ' + id + '" title="'+getTime()+'"><p>' + data + '</p></div></div>').appendTo('#conversation');
     }
     else
     $('<hr><p>' + data + '</p>').appendTo(last_msg);
@@ -326,7 +325,7 @@ add_info(msg);
 socket.on('disc', function(id) {
   connected=false;
     $('#' + id + '_s,#' + id + '_t,#opts,#data').addClass('vh');
-    $('<div class="popover"><div class="popover-content"><p><a href="http://www.heartohelp.us/forum/missed-connections/" target="_blank">Post a Missed Connection</a>.<br></p></div></div>').appendTo('#conversation');
+    $('<div class="bubble"><p><a href="http://www.heartohelp.us/forum/missed-connections/" target="_blank">Post a Missed Connection</a>.<br></p></div>').appendTo('#conversation');
     socket.disconnect();
   });
 
